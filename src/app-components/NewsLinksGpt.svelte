@@ -144,9 +144,7 @@
 <div class="contentindent">
     {#each news_links_list as news_link}
         <a href={news_link["content"]["canonicalUrl"]["url"]} target="_blank">{news_link["content"]["title"]}</a>
-        <span class="newsdate"
-            >{news_link["content"]["pubDate"]}</span
-        >
+        <span class="newsdate">{news_link["content"]["pubDate"]}</span>
         <br />
     {/each}
 </div>
