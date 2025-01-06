@@ -9,16 +9,16 @@
     "watch": "npm-watch",
     "svelte-check": "svelte-check"
   },
-  "devDependencies": {
-    "@sveltejs/vite-plugin-svelte": "5.*",
-    "svelte": "5.*",
-		"svelte-check": "4.*",
-    "vite": "6.*",
-		"vitest": "2.*",
-		"wrangler": "3.*",
-    "axios": "1.*",
+  "devDependencies": {        
+    "@sveltejs/vite-plugin-svelte": "3.*",
+    "axios": "0.*",
     "bootstrap": "5.*",
-    "npm-watch": "*"
+    "npm-watch": "0.*",
+    "rollup": "4.*",
+    "svelte": "4.*",
+    "svelte-check": "3.*",
+    "vite": "5.*",
+    "wrangler": "3.*"
   },
   "watch": {
     "build": {
