@@ -82,7 +82,7 @@
     .link-options {
         display: flex;
     }
-    /* .infos .link-options button {
+    .infos .link-options button {
         background-color: lightblue;
         cursor: pointer;
         padding-left: 5px;
@@ -91,5 +91,5 @@
     .infos .link-options .active {
         font-weight: bold;
         background-color: rgb(58, 185, 227);
-    } */
+    }
 </style>
