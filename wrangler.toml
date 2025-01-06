@@ -3,5 +3,5 @@ name = "fin-ass-web"
 pages_build_output_dir = "dist"
 compatibility_date = "2024-03-16"
 
-[vars]
+[env]
 VITE_BACKEND_URL = "https://fin-ass-144501535534.europe-west1.run.app"
