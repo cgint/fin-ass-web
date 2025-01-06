@@ -143,7 +143,7 @@
 <strong>News:</strong><br />
 <div class="contentindent">
     {#each news_links_list as news_link}
-        <a href={news_link["link"]} target="_blank">{news_link["title"]}</a>
+        <a href={news_link["content"]["clickThroughUrl"]["url"]} target="_blank">{news_link["content"]["title"]}</a>
         <span class="newsdate"
             >{news_link["content"]["pubDate"]}</span
         >
