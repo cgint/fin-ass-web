@@ -4,7 +4,7 @@
   import InfoKeyValue from "./app-components/InfoKeyValue.svelte";
   import ChartGraphs from "./app-components/ChartGraphs.svelte";
   import LinkNews from "./app-components/LinkNews.svelte";
-  import { api_url } from "./constants.js";
+  import { API_URL } from "./constants.js";
   import { prevInput } from './storePrevInput.js';
   import { tickerInput } from './storeTickerInput.js';
   import { processing } from './storeProcessing.js';
@@ -48,12 +48,12 @@
     info_graphs = "";
     let img_style = 'style="width: 100%; height: auto; padding-top: 5px;"';
     info_graphs += `<a href="https://finviz.com/quote.ashx?t=${userInputTicker}&p=m" target="_blank"><img ${img_style} src="https://charts2-node.finviz.com/chart.ashx?cs=m&t=${userInputTicker}&tf=d&s=linear&ct=candle_stick"/></a>`;
-    let history_graph_1y_url = `${api_url}/image/history/${userInputTicker}/period/1y`;
+    let history_graph_1y_url = `${API_URL}/image/history/${userInputTicker}/period/1y`;
     info_graphs += `<a href="${history_graph_1y_url}" target="_blank"><img ${img_style} src="${history_graph_1y_url}"/></a>`;
     
-    let history_graph_2y_url = `${api_url}/image/history/${userInputTicker}/period/2y`;
+    let history_graph_2y_url = `${API_URL}/image/history/${userInputTicker}/period/2y`;
     info_graphs += `<a href="${history_graph_2y_url}" target="_blank"><img ${img_style} src="${history_graph_2y_url}"/></a>`;
-    let history_graph_10y_url = `${api_url}/image/history/${userInputTicker}/period/10y`;
+    let history_graph_10y_url = `${API_URL}/image/history/${userInputTicker}/period/10y`;
     info_graphs += `<a href="${history_graph_10y_url}" target="_blank"><img ${img_style} src="${history_graph_10y_url}"/></a>`;
   }
   async function fetchInfoData() {
@@ -69,7 +69,7 @@
           info_key_value_pairs = {'Loading.': 'Please wait...'};
         }
         await axios.get(
-          `${api_url}/data/${userInputTicker}`, { headers: { 'password': password } }
+          `${API_URL}/data/${userInputTicker}`, { headers: { 'password': password } }
         ).then(response => {
           console.log("response:", response);
           info_key_value_prev_input = userInputTicker;
