@@ -1,7 +1,7 @@
 <script>
     import { onMount } from 'svelte';
     import axios from 'axios';
-    import { api_url } from "../constants.js";
+    import { API_URL } from "../constants.js";
     import ChatProcessing from "./ChatProcessing.svelte";
     import { tickerInput } from "../storeTickerInput.js";
     $: userInputTicker = $tickerInput.ticker;
@@ -50,7 +50,7 @@
         chat_stats = "";
         chat_answer = 'Reading infos, news and other gpt-summaries ... then thinking ... then answering. Please wait...';
         await axios.get(
-            `${api_url}/gpt/answer/${userInputTicker}/chat`, { params: { chatInput: chatInput },  headers: { 'password': password } }
+            `${API_URL}/gpt/answer/${userInputTicker}/chat`, { params: { chatInput: chatInput },  headers: { 'password': password } }
         ).then(response => {
             chat_answer = response.data['analysis'];
             chat_info = " ("+response.data['source']+" for "+response.data['ticker']+")";

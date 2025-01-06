@@ -1,7 +1,7 @@
 <script>
     import { onMount } from 'svelte';
     import axios from 'axios';
-    import { api_url } from "../constants.js";
+    import { API_URL } from "../constants.js";
     import { result_cache_has_key, result_cache_get, result_cache_set } from "./result_cache.js";
     import { bearer } from "../storeBearer.js";
     import { prevInput } from '../storePrevInput.js';
@@ -62,7 +62,7 @@
                 }
                 await axios
                     .get(
-                        `${api_url}/gpt/analysis/${userInputTicker}/yfinance`,
+                        `${API_URL}/gpt/analysis/${userInputTicker}/yfinance`,
                         { headers: { password: password } },
                     )
                     .then((response) => {

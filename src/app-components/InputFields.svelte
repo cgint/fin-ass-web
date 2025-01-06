@@ -1,7 +1,7 @@
 <script>
   import { onMount } from "svelte";
   import axios from "axios";
-  import { api_url } from "../constants.js";
+  import { API_URL } from "../constants.js";
   import ProcessingText from "./ProcessingText.svelte";
   import { result_cache_delete_today_stock } from "./result_cache.js";
   import { bearer } from "../storeBearer.js";
@@ -46,7 +46,7 @@
     delete_todays_cache_running = true;
     try {
       await axios
-        .delete(`${api_url}/cache/${userInputTicker}/today`, {
+        .delete(`${API_URL}/cache/${userInputTicker}/today`, {
           headers: { password: password },
         })
         .then((response) => {

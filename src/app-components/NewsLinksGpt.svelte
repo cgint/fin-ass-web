@@ -1,7 +1,7 @@
 <script>
     import axios from "axios";
     import { onMount } from "svelte";
-    import { api_url } from "../constants.js";
+    import { API_URL } from "../constants.js";
     import { prevInput } from "../storePrevInput.js";
     import { tickerInput } from "../storeTickerInput.js";
     import { bearer } from "../storeBearer.js";
@@ -51,7 +51,7 @@
                     news_links_list = [];
                 }
                 await axios
-                    .get(`${api_url}/data/${userInputTicker}/news/overview`, {
+                    .get(`${API_URL}/data/${userInputTicker}/news/overview`, {
                         headers: { password: password },
                     })
                     .then((response) => {
@@ -96,7 +96,7 @@
                     gpt_news_analysis = "Analysing. Please wait...";
                 }
                 await axios
-                    .get(`${api_url}/gpt/analysis/${userInputTicker}/news`, {
+                    .get(`${API_URL}/gpt/analysis/${userInputTicker}/news`, {
                         headers: { password: password },
                     })
                     .then((response) => {
