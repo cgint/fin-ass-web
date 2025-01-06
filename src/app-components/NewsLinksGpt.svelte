@@ -145,9 +145,7 @@
     {#each news_links_list as news_link}
         <a href={news_link["link"]} target="_blank">{news_link["title"]}</a>
         <span class="newsdate"
-            >({new Date(news_link["content"]["pubDate"] * 1000)
-                .toISOString()
-                .slice(0, 10)})</span
+            >{news_link["content"]["pubDate"]}</span
         >
         <br />
     {/each}
